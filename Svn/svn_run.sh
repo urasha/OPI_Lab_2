@@ -1,6 +1,8 @@
 SVN_REPO="file:///C:\Users\vladn\IdeaProjects\SvnLab\repo"
 WORKING_DIR="C:\Users\vladn\IdeaProjects\SvnLab\working_copy"
 
+mkdir working_copy
+
 svnadmin create "./repo"
 svn mkdir "$SVN_REPO/trunk" -m "Создаём trunk"
 svn mkdir "$SVN_REPO/branches" -m "Создаём branches"

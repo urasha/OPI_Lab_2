@@ -1,3 +1,5 @@
+mkdir src
+
 git init
 
 git config --local user.name "red"
