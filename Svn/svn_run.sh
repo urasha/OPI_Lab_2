@@ -1,7 +1,5 @@
-SVN_REPO="file:///C:\Users\vladn\IdeaProjects\SvnLab\repo"
-WORKING_DIR="C:\Users\vladn\IdeaProjects\SvnLab\working_copy"
-
-mkdir working_copy
+SVN_REPO="file:///C:\Users\vladn\IdeaProjects\OPI_Lab_2\Svn\repo"
+WORKING_DIR="C:\Users\vladn\IdeaProjects\OPI_Lab_2\Svn\working_copy"
 
 svnadmin create "./repo"
 svn mkdir "$SVN_REPO/trunk" -m "Создаём trunk"
@@ -245,18 +243,18 @@ svn commit -m "r29" --username red
 #########################################
 # r30
 svn switch "$SVN_REPO/branches/branch-30"
-cp -r ../commits/commit30/* .
-svn add --force .
-svn commit -m "r30" --username blue
+svn merge "$SVN_REPO/branches/branch-5" --accept working
 
-#########################################
-# r30 merge
-svn merge "$SVN_REPO/branches/branch-5" --dry-run
 if [ $? -eq 0 ]; then
   echo 'Merge branch-5 successful'
 else
   echo 'Merge conflict detected'
 fi
+
+cp -r ../commits/commit30/* .
+svn add --force .
+svn resolve --accept working -R .
+svn commit -m "r30" --username blue
 
 #########################################
 # r31
@@ -337,18 +335,18 @@ svn commit -m "r40" --username red
 #########################################
 # r41
 svn switch "$SVN_REPO/branches/branch-18"
-cp -r ../commits/commit41/* .
-svn add --force .
-svn commit -m "r41" --username red
+svn merge "$SVN_REPO/branches/branch-26" --accept working
 
-#########################################
-# r41 merge
-svn merge "$SVN_REPO/branches/branch-26" --dry-run
 if [ $? -eq 0 ]; then
   echo 'Merge branch-26 successful'
 else
   echo 'Merge conflict detected'
 fi
+
+cp -r ../commits/commit41/* .
+svn add --force .
+svn resolve --accept working -R .
+svn commit -m "r41" --username red
 
 #########################################
 # r42
@@ -389,18 +387,18 @@ svn commit -m "r46" --username red
 #########################################
 # r47
 svn switch "$SVN_REPO/branches/branch-29"
-cp -r ../commits/commit47/* .
-svn add --force .
-svn commit -m "r47" --username red
+svn merge "$SVN_REPO/branches/branch-22" --accept working
 
-#########################################
-# r47 merge
-svn merge "$SVN_REPO/branches/branch-22" --dry-run
 if [ $? -eq 0 ]; then
   echo 'Merge branch-22 successful'
 else
   echo 'Merge conflict detected'
 fi
+
+cp -r ../commits/commit47/* .
+svn add --force .
+svn resolve --accept working -R .
+svn commit -m "r47" --username red
 
 #########################################
 # r48
@@ -447,18 +445,18 @@ svn commit -m "r53" --username blue
 #########################################
 # r54
 svn switch "$SVN_REPO/branches/branch-8"
-cp -r ../commits/commit54/* .
-svn add --force .
-svn commit -m "r54" --username red
+svn merge "$SVN_REPO/branches/branch-7" --accept working
 
-#########################################
-# r54 merge
-svn merge "$SVN_REPO/branches/branch-7" --dry-run
 if [ $? -eq 0 ]; then
   echo 'Merge branch-7 successful'
 else
   echo 'Merge conflict detected'
 fi
+
+cp -r ../commits/commit54/* .
+svn add --force .
+svn resolve --accept working -R .
+svn commit -m "r54" --username red
 
 #########################################
 # r55
@@ -505,18 +503,18 @@ svn commit -m "r60" --username red
 #########################################
 # r61
 svn switch "$SVN_REPO/branches/branch-16"
-cp -r ../commits/commit61/* .
-svn add --force .
-svn commit -m "r61" --username blue
+svn merge "$SVN_REPO/branches/branch-15" --accept working
 
-#########################################
-# r61 merge
-svn merge "$SVN_REPO/branches/branch-15" --dry-run
 if [ $? -eq 0 ]; then
   echo 'Merge branch-15 successful'
 else
   echo 'Merge conflict detected'
 fi
+
+cp -r ../commits/commit61/* .
+svn add --force .
+svn resolve --accept working -R .
+svn commit -m "r61" --username blue
 
 #########################################
 # r62
@@ -542,18 +540,18 @@ svn commit -m "r64" --username blue
 #########################################
 # r65
 svn switch "$SVN_REPO/branches/branch-19"
-cp -r ../commits/commit65/* .
-svn add --force .
-svn commit -m "r65" --username red
+svn merge "$SVN_REPO/branches/branch-15" --accept working
 
-#########################################
-# r65 merge
-svn merge "$SVN_REPO/branches/branch-15" --dry-run
 if [ $? -eq 0 ]; then
   echo 'Merge branch-15 successful'
 else
   echo 'Merge conflict detected'
 fi
+
+cp -r ../commits/commit65/* .
+svn add --force .
+svn resolve --accept working -R .
+svn commit -m "r65" --username red
 
 #########################################
 # r66
@@ -580,18 +578,18 @@ svn commit -m "r68" --username blue
 #########################################
 # r69
 svn switch "$SVN_REPO/branches/branch-22"
-cp -r ../commits/commit69/* .
-svn add --force .
-svn commit -m "r69" --username blue
+svn merge "$SVN_REPO/branches/branch-1" --accept working
 
-#########################################
-# r69 merge
-svn merge "$SVN_REPO/branches/branch-1" --dry-run
 if [ $? -eq 0 ]; then
   echo 'Merge branch-1 successful'
 else
   echo 'Merge conflict detected'
 fi
+
+cp -r ../commits/commit69/* .
+svn add --force .
+svn resolve --accept working -R .
+svn commit -m "r69" --username blue
 
 #########################################
 # r70
@@ -603,18 +601,18 @@ svn commit -m "r70" --username red
 #########################################
 # r71
 svn switch "$SVN_REPO/branches/branch-14"
-cp -r ../commits/commit71/* .
-svn add --force .
-svn commit -m "r71" --username red
+svn merge "$SVN_REPO/branches/branch-3" --accept working
 
-#########################################
-# r71 merge
-svn merge "$SVN_REPO/branches/branch-3" --dry-run
 if [ $? -eq 0 ]; then
   echo 'Merge branch-3 successful'
 else
   echo 'Merge conflict detected'
 fi
+
+cp -r ../commits/commit71/* .
+svn add --force .
+svn resolve --accept working -R .
+svn commit -m "r71" --username red
 
 #########################################
 # r72
@@ -626,18 +624,18 @@ svn commit -m "r72" --username blue
 #########################################
 # r73
 svn switch "$SVN_REPO/branches/branch-3"
-cp -r ../commits/commit73/* .
-svn add --force .
-svn commit -m "r73" --username blue
+svn merge "$SVN_REPO/branches/branch-15" --accept working
 
-#########################################
-# r73 merge
-svn merge "$SVN_REPO/branches/branch-15" --dry-run
 if [ $? -eq 0 ]; then
   echo 'Merge branch-15 successful'
 else
   echo 'Merge conflict detected'
 fi
+
+cp -r ../commits/commit73/* .
+svn add --force .
+svn resolve --accept working -R .
+svn commit -m "r73" --username blue
 
 #########################################
 # r74
@@ -656,18 +654,18 @@ svn commit -m "r75" --username red
 #########################################
 # r76
 svn switch "$SVN_REPO/branches/branch-24"
-cp -r ../commits/commit76/* .
-svn add --force .
-svn commit -m "r76" --username blue
+svn merge "$SVN_REPO/branches/branch-10" --accept working
 
-#########################################
-# r76 merge
-svn merge "$SVN_REPO/branches/branch-10" --dry-run
 if [ $? -eq 0 ]; then
   echo 'Merge branch-10 successful'
 else
   echo 'Merge conflict detected'
 fi
+
+cp -r ../commits/commit76/* .
+svn add --force .
+svn resolve --accept working -R .
+svn commit -m "r76" --username blue
 
 #########################################
 # r77
@@ -707,18 +705,18 @@ svn commit -m "r81" --username red
 #########################################
 # r82
 svn switch "$SVN_REPO/branches/branch-20"
-cp -r ../commits/commit82/* .
-svn add --force .
-svn commit -m "r82" --username blue
+svn merge "$SVN_REPO/branches/branch-23" --accept working
 
-#########################################
-# r82 merge
-svn merge "$SVN_REPO/branches/branch-23" --dry-run
 if [ $? -eq 0 ]; then
   echo 'Merge branch-23 successful'
 else
   echo 'Merge conflict detected'
 fi
+
+cp -r ../commits/commit82/* .
+svn add --force .
+svn resolve --accept working -R .
+svn commit -m "r82" --username blue
 
 #########################################
 # r83
@@ -730,35 +728,34 @@ svn commit -m "r83" --username blue
 #########################################
 # r84
 svn switch "$SVN_REPO/branches/branch-6"
-cp -r ../commits/commit84/* .
-svn add --force .
-svn commit -m "r84" --username red
+svn merge "$SVN_REPO/branches/branch-23" --accept working
 
-#########################################
-# r84 merge
-svn merge "$SVN_REPO/branches/branch-23" --dry-run
 if [ $? -eq 0 ]; then
   echo 'Merge branch-23 successful'
 else
   echo 'Merge conflict detected'
 fi
 
-#########################################
-# r85
-svn switch "$SVN_REPO/branches/branch-6"
-cp -r ../commits/commit85/* .
+cp -r ../commits/commit84/* .
 svn add --force .
-svn commit -m "r85" --username blue
+svn resolve --accept working -R .
+svn commit -m "r84" --username red
 
 #########################################
-# r85 merge
+# r85
 svn switch "$SVN_REPO/branches/branch-23"
-svn merge "$SVN_REPO/branches/branch-21" --dry-run
+svn merge "$SVN_REPO/branches/branch-21" --accept working
+
 if [ $? -eq 0 ]; then
   echo 'Merge branch-21 successful'
 else
   echo 'Merge conflict detected'
 fi
+
+cp -r ../commits/commit85/* .
+svn add --force .
+svn resolve --accept working -R .
+svn commit -m "r85" --username blue
 
 #########################################
 # r86
@@ -770,7 +767,7 @@ svn commit -m "r86" --username red
 #########################################
 # r87
 svn switch "$SVN_REPO/branches/branch-21"
-svn merge "$SVN_REPO/branches/branch-5" --dry-run
+svn merge "$SVN_REPO/branches/branch-5"  --accept working
 if [ $? -eq 0 ]; then
   echo 'Merge branch-5 successful'
 else
@@ -783,18 +780,18 @@ svn commit -m "r87" --username red
 #########################################
 # r88
 svn switch "$SVN_REPO/branches/branch-28"
-cp -r ../commits/commit88/* .
-svn add --force .
-svn commit -m "r88" --username red
+svn merge "$SVN_REPO/branches/branch-11" --accept working
 
-#########################################
-# r88 merge
-svn merge "$SVN_REPO/branches/branch-11" --dry-run
 if [ $? -eq 0 ]; then
   echo 'Merge branch-11 successful'
 else
   echo 'Merge conflict detected'
 fi
+
+cp -r ../commits/commit88/* .
+svn add --force .
+svn resolve --accept working -R .
+svn commit -m "r88" --username red
 
 #########################################
 # r89
@@ -813,34 +810,34 @@ svn commit -m "r90" --username red
 #########################################
 # r91
 svn switch "$SVN_REPO/branches/branch-18"
-cp -r ../commits/commit91/* .
-svn add --force .
-svn commit -m "r91" --username blue
+svn merge "$SVN_REPO/branches/branch-4" --accept working
 
-#########################################
-# r91 merge
-svn merge "$SVN_REPO/branches/branch-4" --dry-run
 if [ $? -eq 0 ]; then
   echo 'Merge branch-4 successful'
 else
   echo 'Merge conflict detected'
 fi
 
+cp -r ../commits/commit91/* .
+svn add --force .
+svn resolve --accept working -R .
+svn commit -m "r91" --username blue
+
 #########################################
 # r92
 svn switch "$SVN_REPO/branches/branch-4"
-cp -r ../commits/commit92/* .
-svn add --force .
-svn commit -m "r92" --username red
+svn merge "$SVN_REPO/branches/branch-26" --accept working
 
-#########################################
-# r92 merge
-svn merge "$SVN_REPO/branches/branch-26" --dry-run
 if [ $? -eq 0 ]; then
   echo 'Merge branch-26 successful'
 else
   echo 'Merge conflict detected'
 fi
+
+cp -r ../commits/commit92/* .
+svn add --force .
+svn resolve --accept working -R .
+svn commit -m "r92" --username red
 
 #########################################
 # r93
@@ -852,18 +849,18 @@ svn commit -m "r93" --username blue
 #########################################
 # r94
 svn switch "$SVN_REPO/branches/branch-12"
-cp -r ../commits/commit94/* .
-svn add --force .
-svn commit -m "r94" --username blue
+svn merge "$SVN_REPO/branches/branch-5" --accept working
 
-#########################################
-# r94 merge
-svn merge "$SVN_REPO/branches/branch-5" --dry-run
 if [ $? -eq 0 ]; then
   echo 'Merge branch-5 successful'
 else
   echo 'Merge conflict detected'
 fi
+
+cp -r ../commits/commit94/* .
+svn add --force .
+svn resolve --accept working -R .
+svn commit -m "r94" --username blue
 
 #########################################
 # r95
@@ -875,35 +872,34 @@ svn commit -m "r95" --username red
 #########################################
 # r96
 svn switch "$SVN_REPO/branches/branch-25"
-cp -r ../commits/commit96/* .
-svn add --force .
-svn commit -m "r96" --username red
+svn merge "$SVN_REPO/branches/branch-27" --accept working
 
-#########################################
-# r96 merge
-svn merge "$SVN_REPO/branches/branch-27" --dry-run
 if [ $? -eq 0 ]; then
   echo 'Merge branch-27 successful'
 else
   echo 'Merge conflict detected'
 fi
 
-#########################################
-# r97
-svn switch "$SVN_REPO/branches/branch-25"
-cp -r ../commits/commit97/* .
+cp -r ../commits/commit96/* .
 svn add --force .
-svn commit -m "r97" --username red
+svn resolve --accept working -R .
+svn commit -m "r96" --username red
 
 #########################################
-# r97 merge
+# r97
 svn switch "$SVN_REPO/branches/branch-27"
-svn merge "$SVN_REPO/branches/branch-9" --dry-run
+svn merge "$SVN_REPO/branches/branch-9" --accept working
+
 if [ $? -eq 0 ]; then
   echo 'Merge branch-9 successful'
 else
   echo 'Merge conflict detected'
 fi
+
+cp -r ../commits/commit97/* .
+svn add --force .
+svn resolve --accept working -R .
+svn commit -m "r97" --username red
 
 #########################################
 # r98
@@ -915,12 +911,14 @@ svn commit -m "r98" --username blue
 #########################################
 # r99
 svn switch "$SVN_REPO/branches/branch-9"
-svn merge "$SVN_REPO/branches/branch-1" --dry-run
+svn merge "$SVN_REPO/branches/branch-1" --accept working
+
 if [ $? -eq 0 ]; then
   echo 'Merge branch-1 successful'
 else
   echo 'Merge conflict detected'
 fi
+
 cp -r ../commits/commit99/* .
 svn add --force .
 svn commit -m "r99" --username red
